@@ -6,7 +6,7 @@ dotenv.config()
 
 const authRouter = require('./routes/auth')
 const userRouter = require('./routes/user')
-const productRouter = require('./routes/product')
+const productRouter = require('./routes/product') // Ensure this is the updated file
 const cartRouter = require('./routes/cart')
 const orderRouter = require('./routes/order')
 const checkoutRouter = require('./routes/checkout')
@@ -35,7 +35,7 @@ app.use(handleMalformedJson) // handle common req errors
 // routes
 app.use("/auth", authRouter)
 app.use("/users", userRouter)
-app.use("/products", productRouter)
+app.use("/products", productRouter) // Ensure this is the updated file
 app.use("/carts", cartRouter)
 app.use("/orders", orderRouter)
 app.use("/checkout", checkoutRouter)

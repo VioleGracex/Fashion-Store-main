@@ -205,6 +205,11 @@ async function fetchOrderDetails(orderID) {
   return await checkResponse(resp);
 }
 
+async function fetchUniqueCategories() {
+  const resp = await fetch(`${API_URL}/products/categories`);
+  return await checkResponse(resp);
+}
+
 export default {
   registerUser,
   loginUser,
@@ -223,4 +228,5 @@ export default {
   createOrder,
   fetchAllOrders,
   fetchOrderDetails,
+  fetchUniqueCategories, // <-- Add this line
 };

@@ -9,6 +9,16 @@ const {
 	verifyAdminAccess,
 } = require('../middlewares/verifyAuth')
 
+// Get unique categories - any user
+router.get("/categories", async (req, res) => {
+	try {
+		const categories = await Product.distinct("categories")
+		return res.json(categories)
+	} catch (err) {
+		console.error(err)
+		return res.status(500).json(productResponse.unexpectedError)
+	}
+})
 
 // Get all products - any user
 router.get("/", 
@@ -48,7 +58,7 @@ router.post("/",
 
 	} catch (err) {
 		console.log(err)
-		return res.status(500).json(productResponse.unexpectedErrorS)
+		return res.status(500).json(productResponse.unexpectedError)
 	}
 })
 
